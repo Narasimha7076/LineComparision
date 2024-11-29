@@ -8,8 +8,14 @@ public class Line {
         this.y2 = y2;
     }
 
-    public void calculateLength(){
-        double distance = Math.sqrt(Math.pow(this.x2 - this.x1, 2) + Math.pow(this.y2 - this.y1, 2));
-        System.out.println("Distance: "+distance);
+    public double calculateLength(){
+        return Math.sqrt(Math.pow(this.x2 - this.x1, 2) + Math.pow(this.y2 - this.y1, 2));
     }
+
+    public boolean equals(Line obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+        return Double.compare(this.calculateLength(), obj.calculateLength()) == 0; // Safe comparison for double values
+    }
+
 }
