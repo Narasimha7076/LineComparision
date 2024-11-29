@@ -27,8 +27,21 @@ public class Main {
         Line l1 = new Line(x1,y1,x2,y2);
         Line l2 = new Line(x3,y3,x4,y4);
 
-        if(l1.equals(l2)) System.out.println("Line-1 is equal to Line-2");
-        else System.out.println("Line-1 is not equal to Line-2");
+        double length1 = l1.calculateLength();
+        double length2 = l2.calculateLength();
+
+        System.out.println("Line 1 Length: " + length1);
+        System.out.println("Line 2 Length: " + length2);
+
+
+        int comparisonResult = l1.compareTo(l2);
+        if (comparisonResult == 0) {
+            System.out.println("The two lines are equal.");
+        } else if (comparisonResult > 0) {
+            System.out.println("Line 1 is longer than Line 2.");
+        } else {
+            System.out.println("Line 1 is shorter than Line 2.");
+        }
 
     }
 }

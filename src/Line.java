@@ -18,4 +18,8 @@ public class Line {
         return Double.compare(this.calculateLength(), obj.calculateLength()) == 0; // Safe comparison for double values
     }
 
+    public int compareTo(Line other) {
+        return Double.compare(this.calculateLength(), other.calculateLength());
+    }
+
 }
